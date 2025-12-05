@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+    --steps: 17;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+body {
+    background: url(/Images/Dexter_Gordon_&_Ernie_Andrews.jpeg);
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+.navlinks {
+    display: flex;
+    list-style: none;
+}
+
+header {
+    z-index: 2; /* for layering purposes */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 17px ;
+    padding-bottom: 2px;
+    padding-top: 8px;
+    font-weight: 600;
+    
+}
+
+
+.logo{
+    padding-left: 15px;
+    filter: invert(100%);
+    transition: filter 0.5s ease-in-out;
+}
+
+nav{
+    margin-right: 15px;
+}
+
+nav a {
+    display: flex;
+    text-decoration: none;
+    margin: 10px;   
+    color:gold;
+    font-family: "Comfortaa";
+}
+
+nav a:hover {
+    text-decoration:double ;
+    text-transform: scale(1.5);
+    text-shadow: 0px 0px 3px gold; /*text glow on hover*/
+}
+
+.button{
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px gold;
+}
+
+
+.home{
+    padding:  70px;
+    position: relative;
+    width: 40%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden; 
+    color: white;    
+}
+
+.home .title {
+    color: orange;
+    text-shadow: 0px 0px 3px gold;
+}
+
+.home .description {
+    color: goldenrod;
+    font-weight: 800;
+}
+
+.description{
+    font-size: 15px;
+}
+
+.block:nth-child(even) {
+    background-color: black;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px;
+}
+
+.block:nth-child(even) .scrnshot {
+    border-radius: 10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #ffffff;
+}
+
+.block:nth-child(odd) .scrnshot {
+    border-radius: 10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #000000;
+}
+
+.block:nth-child(odd) {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 50px;
+}
+
+.cntr_txt {
+    background-color: black;
+    color: #ffffff;
+    text-align: center;
+    padding: 70px;
+    font-weight: 700;
+    font-size: xx-large;
+}
+
+.cntr_txt:hover {
+    text-shadow: 0px 0px 5px gold;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    font-family: "Lora", serif;
+}
+
+main {
+    color: #ffffff;
+}
+
+footer {
+    background-color: #ffffff;
+    padding: 20px 0;
+}
+
+.footer_sections {
+  display: flex;
+  justify-content: center;   /* center the columns block horizontally */
+  gap: 40px;                 /* space between columns */
+  max-width: 1100px;         /* limit total width of the columns block */
+  margin: 0 auto;            /* centers the block in the page */
+  padding: 20px;             /* optional spacing */
+  box-sizing: border-box;
+  align-items: flex-start;   /* align column tops */
+}
+
+.ftr_div {
+    width: 25%;
+    max-width: 240px;
+}
+
+.footer_sections ul {
+    list-style: none;
+}
+
+.footer_sections ul a {
+    text-decoration: none;
+    color: #000000;
+    padding: 7px;
+    font-style: italic;
+    font-variation-settings: "wght" 300;
+    font-family: mr-eaves-modern, sans-serif;
+    transition: font-variation-settings 1s ease-in-out;
+    &:hover {
+        font-variation-settings: "wght" 700;
+        text-decoration: underline;
+    }
+}
+
+
+
+.copyright {
+    width: 100%;
+    background-color: #000000;
+    font-weight: 900;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+/* controlling Header effects with scrolling as a parameter; when the header has "scrolled" as a class, these effects are applied. */
+
+#header {
+    background: transparent;
+    box-shadow: none;
+    text-shadow:
+        -1px -1px 0 black, 
+        1px -1px 0 black,  
+        -1px 1px 0 black,  
+        1px 1px 0 black; 
+    transition: all 250ms ease-in;
+}
+
+#header.scrolled {
+    background: white;
+    box-shadow: 0px 2px 5px grey;
+    text-shadow: none;
+    .logo {
+        filter: invert(0%);
+    }
+}
+
+#header.scrolled a {
+    color: #000000;
+}
+
+/* animating titles on hover */
+
+.title_anim {
+    font-family: "Playfair Display";
+    font-variation-settings: "wght" 100;
+    transition: font-variation-settings 1s ease-in-out;
+    &:hover {
+        font-variation-settings: "wght" 1000;
+    }
+}
+
+/* scrolling animations */
+
+.text_block {
+    /* start hidden and slightly shifted down */
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.text_block.in-view {
+    /* when JS adds .in-view the element will transition into place */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#scrollInfo:hover {
+    cursor: pointer;
+}
+
+.typing {
+        display: inline-block; /* ensure width can be animated reliably */
+        white-space: nowrap;
+        border-right: 1px solid white;
+        overflow: hidden;
+        /*
+            - blinking: caret blink
+            - typing: animate width from 0ch -> Nch where N approximates character count
+            - 'forwards' keeps the final visible state after the animation ends
+        */
+        animation: blinking 1s steps(1, end) infinite,
+                             typing 4s steps(22, end) forwards;
+}
+
+@keyframes blinking {
+    0% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: white;
+    }
+
+    100% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    /* animate width in ch (character) units — adjust 22ch to match text length if needed */
+    from { width: 0ch; }
+    to   { width: 22ch; }
+}
+
+.scrnshot {
+    border-radius: 10px;
+    border-style: 10px solid;
+}

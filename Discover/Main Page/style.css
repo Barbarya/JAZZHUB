@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+body {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navlinks {
+    display: flex;
+    list-style: none;
+}
+
+header {
+    z-index: 2; /* for layering purposes */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    align-items: center;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 17px ;
+    padding-bottom: 2px;
+    padding-top: 8px;
+    font-weight: 600;
+    
+}
+
+
+.logo{
+    padding-left: 15px;
+    filter: invert(100%);
+    transition: filter 0.5s ease-in-out;
+}
+
+nav{
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+nav a {
+    display: flex;
+    text-decoration: none;
+    margin: 10px;   
+    color:gold;
+    font-family: "Comfortaa";
+}
+
+nav a:hover {
+    text-decoration:double ;
+    text-transform: scale(1.5);
+    text-shadow: 0px 0px 3px gold; /*text glow on hover*/
+}
+
+#header {
+    background: black;
+    box-shadow: none;
+}
+
+footer {
+    background-color: #ffffff;
+    padding: 20px 0;
+}
+
+.footer_sections {
+  display: flex;
+  justify-content: center;   
+  gap: 40px;                 
+  max-width: 1100px;         
+  margin: 0 auto;            
+  padding: 20px;             
+  box-sizing: border-box;
+  align-items: flex-start;   
+}
+
+.ftr_div {
+    width: 25%;
+    max-width: 240px;
+}
+
+.footer_sections ul {
+    list-style: none;
+}
+
+.footer_sections ul a {
+    text-decoration: none;
+    color: #000000;
+    padding: 7px;
+    font-style: italic;
+    font-variation-settings: "wght" 300;
+    font-family: mr-eaves-modern, sans-serif;
+    transition: font-variation-settings 1s ease-in-out;
+    &:hover {
+        font-variation-settings: "wght" 700;
+        text-decoration: underline;
+    }
+}
+
+.copyright {
+    width: 100%;
+    background-color: #000000;
+    font-weight: 900;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.box {
+    width: 100vw;
+    height: 500px;
+    background-image: url(/Images/surya-urs-YDf2T-Uyq7U-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box h1 {
+    font-weight: 600;
+    font-size: 60px;
+    color: #ffe81b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Manufacturing Consent";
+}
