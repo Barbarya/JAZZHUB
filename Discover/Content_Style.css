@@ -307,7 +307,7 @@ blockquote + p {
     .sidenav { transform: translateX(0); width: 260px; }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     /* Off-canvas sidebar on very small screens; hidden by default */
     .sidenav {
         transform: translateX(-100%);
@@ -320,11 +320,20 @@ blockquote + p {
         height: 100%;
         padding-top: 100px; /* keep existing spacing */
         background-color: #111;
-        font-size: x-small;
     }
 
-    * {
-        font-size: smaller;
+    .sidenav a {
+        font-size: x-small;
+        line-height: 1.5rem;
+    }
+
+    .mainBlock{
+        font-size: x-small;
+        line-height: 1.5rem;
+    }
+
+    .navlinks {
+        font-size: x-small;
         line-height: 1.5rem;
     }
 
