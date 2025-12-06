@@ -288,7 +288,7 @@ blockquote + p {
     left: 50%;
     transform: translateX(-50%);
     font-family: 'Comfortaa';
-    bottom: 18px;
+    bottom: 12px;
     padding: 8px 14px;
     background: rgba(0,0,0,0.75);
     color: #ffd54f;
@@ -320,7 +320,14 @@ blockquote + p {
         height: 100%;
         padding-top: 100px; /* keep existing spacing */
         background-color: #111;
+        font-size: x-small;
     }
+
+    * {
+        font-size: smaller;
+        line-height: 1.5rem;
+    }
+
     .sidenav.open {
         transform: translateX(0);
     }
@@ -332,7 +339,7 @@ blockquote + p {
         justify-content: center;
         position: fixed;
         left: 12px;
-        top: 12px;
+        bottom: 12px;
         z-index: 1300;
         background: rgba(0,0,0,0.8);
         color: #ffd54f;
@@ -344,13 +351,26 @@ blockquote + p {
         font-size: 18px;
     }
 
-    .sidenav-mobile-indicator { display: block; }
+    .sidenav-mobile-indicator { 
+        display: block;
+        font-size: x-small;
+    }
 
     /* Remove left margin where sidebar was to allow full-width content */
     .main,
     .mainBlock,
     footer {
         margin-left: 0;
+        width: 100%;
+    }
+
+    body {
+        width: 100vw;
+    }
+
+    main {
+        width: 100%;
+        padding: 25px;
     }
 }
 
