@@ -117,4 +117,51 @@ document.documentElement.style.scrollBehavior = 'smooth';
     }
   }
 
+  
+  /* --- Small-screen toggle for the sidenav --- */
+  (function attachToggle() {
+    const sidenav = document.querySelector('.sidenav');
+    if (!sidenav) return;
+
+    // ensure there's an id for aria-controls
+    if (!sidenav.id) sidenav.id = 'sidenav-main';
+
+    // create toggle button if not present
+    if (!document.getElementById('sidenav-toggle')) {
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.id = 'sidenav-toggle';
+      toggle.className = 'sidenav-toggle';
+      toggle.setAttribute('aria-controls', sidenav.id);
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Toggle navigation');
+      toggle.innerHTML = '\u2630'; // hamburger
+      document.body.appendChild(toggle);
+
+      toggle.addEventListener('click', (e) => {
+        const opened = sidenav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(opened));
+        e.stopPropagation();
+      });
+
+      // Close when navigation link clicked on small screens
+      links.forEach(l => l.addEventListener('click', () => {
+        if (window.innerWidth <= 600 && sidenav.classList.contains('open')) {
+          sidenav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      }));
+
+      // Click outside to close
+      document.addEventListener('click', (ev) => {
+        if (window.innerWidth <= 600 && sidenav.classList.contains('open')) {
+          if (!sidenav.contains(ev.target) && !toggle.contains(ev.target)) {
+            sidenav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    }
+  })();
+
 })();
